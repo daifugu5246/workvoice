@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="static/icon.png">
-    <title>WorkVoice News</title>
+    <title>ข่าวเวิร์กพอยต์23</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@100..900&display=swap');
         * {
@@ -20,43 +20,6 @@
             flex-direction: column;
             justify-content: center;
         }
-        .container {
-            width: 60%;
-            background: white;
-            padding: 20px;
-            margin: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            text-align: center;
-            align-self: center;
-        }
-        .article-image {
-            width: 80%;
-            height: auto;
-            border-radius: 8px;
-        }
-        h1 {
-            color: rgb(30, 30, 30);
-            font-size: 24px;
-        }
-        p {
-            line-height: 1.6;
-            color: rgb(30, 30, 30);
-            font-size: 18px;
-        }
-        .play-button {
-            background-color: #0008D1;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            margin: 20px;
-        }
-        .play-button:hover {
-            background-color: #0000A0;
-        }
         .header {
             display: block;
             background-color: #333;
@@ -69,6 +32,65 @@
         .header h1 {
             color: white;
             margin: 10px;
+        }
+        .hot-news {
+            text-align: center;
+            color: rgb(30, 30, 30);
+            font-size: 40px;
+        }
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            margin: auto;
+        }
+        .news-card {
+            width: 700px;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            background: #fff;
+        }
+        .news-card:hover {
+            transform: scale(1.05);
+        }
+        .news-card img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .news-content {
+            padding: 10px;
+        }
+        .news-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .news-date {
+            font-size: 16px;
+            color: gray;
+        }
+        h1 {
+            color: rgb(30, 30, 30);
+            font-size: 24px;
+        }
+        p {
+            line-height: 1.6;
+            color: rgb(30, 30, 30);
+            font-size: 18px;
+        }
+        .logo {
+            width: 180px;
+            margin: auto;
+            padding: 10px;
         }
     </style>
     <script>
@@ -86,14 +108,23 @@
     </script>
 </head>
 <body>
-    <header class="header"><h1>WorkVoice News</h1></header>
-    <div class="container">
-        <h1>Exploring the Beauty of Nature</h1>
-        <button id="play-button" class="play-button" onclick="toggleAudio()">Play Audio</button>
-        <audio id="nature-audio" src="static/nature-sound.mp3"></audio>
-        <img class="article-image" src="static/hummingbird.jpg" alt="A hummingbird with iridescent green feathers hovers mid-air, extending its beak toward a vibrant red hibiscus flower, ready to sip nectar.">
-        <p>Nature is a beautiful and integral part of our lives. From majestic mountains to serene lakes, the natural world offers a vast array of stunning landscapes that inspire and calm the human spirit. The fresh air, vibrant greenery, and the sounds of wildlife create a peaceful environment that rejuvenates the mind and body.</p>
-        <p>Spending time in nature has been shown to reduce stress and improve overall well-being. Whether it's hiking through the forests, watching the waves crash on a beach, or simply enjoying a quiet moment in a park, connecting with nature can be a profoundly enriching experience.</p>
+    <header class="header"><img class="logo" src="static/logo.png" alt="โลโก้สำนักข่าวเวิร์คพอยต์"></header>
+    <h1 class="hot-news">ข่าวด่วนวันนี้</h1>
+    <div class="news-list">
+        <div class="news-card" onclick="window.location.href='news1.html'">
+            <img src="static/img/robber1.jpg" alt="ชายสวมเสื้อแขนยาวสีเขียวน้ำเงิน กางเกงขายาวสีกรม สวมถุงมือสีดำ สวมหมวกกันน็อคสีดำทอง ในมือถือปืนและถือซองกระดาษ ยืนค้ำแขนอยู่หน้าเคาน์เตอร์ร้านทองออโรร่า">
+            <div class="news-content">
+                <div class="news-title">หัวข้อข่าว คนร้าย ควงปืนบุกเดี่ยวชิงทองหนัก 13 บาท</div>
+                <div class="news-date">16 มีนาคม 2568</div>
+            </div>
+        </div>
+        <div class="news-card">
+            <img src="static/img/baby.jpg" alt="ตำรวจ และกู้ภัยร่วมกตัญญู กำลังตรวจสอบซากของเด็กทารก บริเวณถนนริมคลอง">
+            <div class="news-content">
+                <div class="news-title">ดับเด็กทารกเพศชาย พบถูกจับถ่วงน้ำ</div>
+                <div class="news-date">16 มีนาคม 2568</div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
