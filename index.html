@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="static/icon.png">
+    <title>WorkVoice News</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@100..900&display=swap');
+        * {
+            box-sizing: border-box;
+            font-family: 'Noto Serif Thai', serif;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .container {
+            width: 60%;
+            background: white;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            align-self: center;
+        }
+        .article-image {
+            width: 80%;
+            height: auto;
+            border-radius: 8px;
+        }
+        h1 {
+            color: rgb(30, 30, 30);
+            font-size: 24px;
+        }
+        p {
+            line-height: 1.6;
+            color: rgb(30, 30, 30);
+            font-size: 18px;
+        }
+        .play-button {
+            background-color: #0008D1;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 20px;
+        }
+        .play-button:hover {
+            background-color: #0000A0;
+        }
+        .header {
+            display: block;
+            background-color: #333;
+            text-align: center;
+            padding: 5px;
+            font-size: 28px;
+            font-weight: bold;
+            display: grid;
+        }
+        .header h1 {
+            color: white;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function toggleAudio() {
+            var audio = document.getElementById('nature-audio');
+            var button = document.getElementById('play-button');
+            if (audio.paused) {
+                audio.play();
+                button.textContent = 'Pause Audio';
+            } else {
+                audio.pause();
+                button.textContent = 'Play Audio';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="header"><h1>WorkVoice News</h1></header>
+    <div class="container">
+        <h1>Exploring the Beauty of Nature</h1>
+        <button id="play-button" class="play-button" onclick="toggleAudio()">Play Audio</button>
+        <audio id="nature-audio" src="static/nature-sound.mp3"></audio>
+        <img class="article-image" src="static/hummingbird.jpg" alt="A hummingbird with iridescent green feathers hovers mid-air, extending its beak toward a vibrant red hibiscus flower, ready to sip nectar.">
+        <p>Nature is a beautiful and integral part of our lives. From majestic mountains to serene lakes, the natural world offers a vast array of stunning landscapes that inspire and calm the human spirit. The fresh air, vibrant greenery, and the sounds of wildlife create a peaceful environment that rejuvenates the mind and body.</p>
+        <p>Spending time in nature has been shown to reduce stress and improve overall well-being. Whether it's hiking through the forests, watching the waves crash on a beach, or simply enjoying a quiet moment in a park, connecting with nature can be a profoundly enriching experience.</p>
+    </div>
+</body>
+</html>
