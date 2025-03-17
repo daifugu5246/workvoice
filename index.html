@@ -10,46 +10,43 @@
         * {
             box-sizing: border-box;
             font-family: 'Noto Serif Thai', serif;
-        }
-        body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+        }
+        body {
             background-color: #f4f4f4;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: center;
         }
         .header {
-            display: block;
             background-color: #333;
             text-align: center;
-            padding: 5px;
-            font-size: 28px;
-            font-weight: bold;
-            display: grid;
+            padding: 10px;
+            width: 100%;
         }
-        .header h1 {
-            color: white;
-            margin: 10px;
+        .header img {
+            width: 180px;
         }
         .hot-news {
             text-align: center;
-            color: rgb(30, 30, 30);
-            font-size: 40px;
+            font-size: 32px;
+            margin: 20px 0;
         }
         .news-list {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            gap: 30px;
-            padding: 20px;
-            margin: auto;
+            align-items: center;
+            gap: 20px;
+            width: 90%;
+            max-width: 800px;
         }
         .news-card {
-            width: 700px;
             display: flex;
+            flex-direction: row;
             align-items: center;
+            width: 100%;
+            max-width: 700px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             overflow: hidden;
@@ -78,37 +75,36 @@
             font-size: 16px;
             color: gray;
         }
-        h1 {
-            color: rgb(30, 30, 30);
-            font-size: 24px;
-        }
-        p {
-            line-height: 1.6;
-            color: rgb(30, 30, 30);
-            font-size: 18px;
-        }
-        .logo {
-            width: 180px;
-            margin: auto;
-            padding: 10px;
-        }
-    </style>
-    <script>
-        function toggleAudio() {
-            var audio = document.getElementById('nature-audio');
-            var button = document.getElementById('play-button');
-            if (audio.paused) {
-                audio.play();
-                button.textContent = 'Pause Audio';
-            } else {
-                audio.pause();
-                button.textContent = 'Play Audio';
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .news-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .news-card img {
+                width: 100%;
+                height: auto;
+            }
+            .hot-news {
+                font-size: 28px;
             }
         }
-    </script>
+        @media (max-width: 480px) {
+            .hot-news {
+                font-size: 24px;
+            }
+            .news-title {
+                font-size: 18px;
+            }
+            .news-date {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="header"><img class="logo" src="static/logo.png" alt="โลโก้สำนักข่าวเวิร์คพอยต์"></header>
+    <header class="header"><img src="static/logo.png" alt="โลโก้สำนักข่าวเวิร์คพอยต์"></header>
     <h1 class="hot-news">ข่าวด่วนวันนี้</h1>
     <div class="news-list">
         <div class="news-card" onclick="window.location.href='news1.html'">
