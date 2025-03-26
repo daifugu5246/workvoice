@@ -120,15 +120,23 @@
 
     </style>
     <script>
-        function toggleAudio() {
-            var audio = document.getElementById('nature-audio');
-            var button = document.getElementById('play-button');
+        function toggleAudio(audioId, buttonId) {
+            var audio = document.getElementById(audioId);
+            var button = document.getElementById(buttonId);
             if (audio.paused) {
                 audio.play();
-                button.textContent = 'หยุดเล่นเสียงบรรยายภาพ';
+                if (audioId === 'human-audio') {
+                    button.textContent = 'หยุดเล่นเสียงบรรยายภาพจากมนุษย์';
+                }else{
+                    button.textContent = 'หยุดเล่นเสียงบรรยายภาพจาก AI';
+                }
             } else {
                 audio.pause();
-                button.textContent = 'เริ่มเล่นเสียงบรรยายภาพ';
+                if (audioId === 'human-audio') {
+                    button.textContent = 'เริ่มเล่นเสียงบรรยายภาพจากมนุษย์';
+                }else{
+                    button.textContent = 'เริ่มเล่นเสียงบรรยายภาพจาก AI';
+                }
             }
         }
     </script>
@@ -140,8 +148,10 @@
     <div class="container">
         <h1>คนร้าย ควงปืนบุกเดี่ยวชิงทองหนัก 13 บาท</h1>
         <h2>16 มีนาคม 2568</h2>
-        <button id="play-button" class="play-button" onclick="toggleAudio()">เริ่มเล่นเสียงบรรยายภาพ</button>
-        <audio id="nature-audio" src="static/audio/robber.m4a"></audio>
+        <button id="play-button-human" class="play-button" onclick="toggleAudio('human-audio', 'play-button-human')">เริ่มเล่นเสียงบรรยายภาพจากมนุษย์</button>
+        <button id="play-button-ai" class="play-button" onclick="toggleAudio('ai-audio', 'play-button-ai')">เริ่มเล่นเสียงบรรยายภาพจาก AI</button>
+        <audio id="human-audio" src="static/audio/robber.m4a"></audio>
+        <audio id="ai-audio" src="static/audio/robber-ai.mp3"></audio>
         <img class="article-image" src="static/img/robber2.jpg" alt="ชายสวมเสื้อแขนยาวสีเขียวน้ำเงิน กางเกงขายาวสีกรม สวมถุงมือสีดำ สวมหมวกกันน็อคสีดำทอง นั่งอยู่บนรถจักรยานยนต์สีขาว จอดริมทางเท้าหน้าร้านทอง">
         <p>ร้านทองขวัญผวา คนร้ายปกปิดใบหน้า ควงปืนบุกปล้นทองหนัก 13 บาท ข่มขู่พนักงานแล้วรีบหลบหนี</p>
         <p>เมื่อวันที่ 14 มีนาคม 2568 เวลาประมาณ เก้านาฬิกา สามสิบนาที สถานีตำรวจภูธรคูคต จังหวัดปทุมธานี ได้รับแจ้งจากศูนย์วิทยุสถานีตำรวจภูธรคูคต เกิดเหตุร้านทองออโรร่า หมู่ 4 ตำบลลาดสวาย อำเภอลำลูกกา จังหวัดปทุมธานี ถูกชิงทรัพย์เป็นทองรูปพรรณหนักรวมสิบสามบาท รวมมูลค่าห้าแสนสี่หมื่นเจ็ดพันหกร้อยห้าสิบบาท</p>
