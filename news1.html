@@ -127,8 +127,12 @@
                 audio.play();
                 if (audioId === 'human-audio') {
                     button.textContent = 'หยุดเล่นเสียงบรรยายภาพจากมนุษย์';
+                    document.getElementById('ai-audio').pause();
+                    document.getElementById('play-button-ai').textContent = 'เริ่มเล่นเสียงบรรยายภาพจาก AI';
                 }else{
                     button.textContent = 'หยุดเล่นเสียงบรรยายภาพจาก AI';
+                    document.getElementById('human-audio').pause();
+                    document.getElementById('play-button-human').textContent = 'เริ่มเล่นเสียงบรรยายภาพจากมนุษย์';
                 }
             } else {
                 audio.pause();
